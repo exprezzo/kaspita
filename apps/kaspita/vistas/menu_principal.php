@@ -44,7 +44,7 @@
 		$claseBase='menu_item';
 		$raiz= empty($_PETICION->modulo)? '/' : '/'.$_PETICION->modulo.'/';	
 		for($i=0; $i<sizeof($menus); $i++ ){
-			if ( $raiz.$_PETICION->controlador.'/'.$_PETICION->accion == $menus[$i]['url'] ){
+			if ( '/'.$_PETICION->accion == $menus[$i]['url'] ){
 				$menus[$i]['estado']=$estado;
 			}
 		}	
