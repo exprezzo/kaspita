@@ -12,7 +12,7 @@
 		'idMenu'=>'nosotros',
 		'estado'=>'',
 		'text'=>'nosotros',
-		'url'=>'nosotros'
+		'url'=>'/nosotros'
 	);
 	$menus[]=array(
 		'idMenu'=>'portafolio',
