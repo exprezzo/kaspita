@@ -20,7 +20,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c3c3c', end
 .menu_principal .menu_item.activo a{color:white;}
 .menu_principal .menu_item a:hover{color:white !important;}
 .items_wraper{}
-.slidesContainer{height: 365px;overflow: hidden;position: relative;display:inline-block;}
+.slidesContainer{height: auto;overflow: hidden;position: relative;display:inline-block;}
 .slidesContainer{transition: all 1s;-moz-transition: all 1s;-webkit-transition: all 1s;-o-transition: all 1s;}
 .slider ul{padding:0;margin:0;}
 body{background:#dfdfdf;}

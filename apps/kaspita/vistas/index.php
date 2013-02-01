@@ -9,7 +9,7 @@
 	<script>
 		seleccionar=function(target){
 			target=$(target);
-			console.log(target);
+			
 			var incW=14;
 			 var w=target.width();
 			 var h=target.height();
@@ -24,14 +24,46 @@
 			selector.offset(offset);
 		}
 		$(function(){
+			var screen=window.screen;
+			var sw= screen.availWidth;
+			
+			var imgW=0;
+			if (sw > 1000){
+				imgW=1000;
+			}else{
+				imgW=sw - 40;
+			}
+			
+			$('.slider_1').width(imgW);
+			$('.pagina').css('margin-left',(imgW/2) *-1);
+			$('.slider_1 img').width(imgW);
+			
+			
+			
+		 // create an image object
+		 objImage = new Image();
+			 
+		 // set what happens once the image has loaded 
+		 objImage.onLoad=function(){
+			alert('load');
+			console.log("this"); console.log(this);
+			$('.slidesContainer').height( this.height() );
+		 };
+			 
+		 // preload the image file
+		 objImage.src='/web/apps/kaspita/imagenes/slide_grande_1.png';
+
+			
+		
+			
 			var slides = $('.slider .slidesContainer > .slide');
 			
-			$('.slider .slidesContainer').css('width',1000 * slides.length);
+			$('.slider .slidesContainer').css('width',imgW * slides.length);
 			var items=$('.paginador a');
 			
 			$.each(items, function(index, value) {
 			  $(value).click(function(){
-				var offset=index*1000 * -1;
+				var offset=index*imgW * -1;
 				idx=index;
 				$('.slider .slidesContainer').css('margin-left',offset);				
 			  });
@@ -39,13 +71,13 @@
 			});
 			
 			var numItems=5;
-			var ancho=1000;
+			var ancho=imgW;
 			var idx=1;
 			
 			sliderShow=function(){
 				setTimeout(function(){
 					var offset=idx*ancho * -1;
-					//alert(offset);
+					
 					$('.slider .slidesContainer').css('margin-left',offset);						
 					var target=$('.paginador .a-wrap');
 					seleccionar(target[idx]);
@@ -94,7 +126,7 @@
 			
 			$('.paginador .a-wrap').click(function(e){
 				 var target=$(e.target);
-				//	console.log("target"); console.log(target);
+				
 				  var idt=target.attr('cont');
 				  target = $('.paginador div[idw="'+idt+'"]');
 				 seleccionar(target);
