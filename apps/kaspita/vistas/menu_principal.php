@@ -6,25 +6,25 @@
 		'idMenu'=>'inicio',
 		'estado'=>'',
 		'text'=>'inicio',
-		'url'=>'/'.$_PETICION->modulo.'/paginas/inicio'
+		'url'=>'/inicio'
 	);
 	$menus[]=array(
 		'idMenu'=>'nosotros',
 		'estado'=>'',
 		'text'=>'nosotros',
-		'url'=>'/'.$_PETICION->modulo.'/paginas/nosotros'
+		'url'=>'nosotros'
 	);
 	$menus[]=array(
 		'idMenu'=>'portafolio',
 		'estado'=>'',
 		'text'=>'portafolio',
-		'url'=>'/'.$_PETICION->modulo.'/paginas/portafolio'
+		'url'=>'/portafolio'
 	);
 	$menus[]=array(
 		'idMenu'=>'servicios',
 		'estado'=>'',
 		'text'=>'servicios',
-		'url'=>'/'.$_PETICION->modulo.'/paginas/servicios'
+		'url'=>'/servicios'
 	);		
 ?>
 
