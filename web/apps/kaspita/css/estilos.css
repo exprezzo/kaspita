@@ -16,9 +16,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3c3c3c', end
 .menu_principal{height:72px;right: 0;white; position:absolute;}
 .menu_principal:hover{background:none:}
 .menu_principal .menu_item{display:inline-block;*display: inline; }
-.menu_principal .menu_item a{color:#7a7a7a; text-decoration:none; margin-top:25px;display:inline-block;*display: inline; margin-right:37px;}
+.menu_principal .menu_item a{color:#7a7a7a; text-decoration:none; margin-top:25px;display:inline-block;*display: inline; margin-right:37px;
+font-family: arial, sans-serif, helvetica;
+font-size: 14px;
+}
 .menu_principal .menu_item.activo a{color:white;}
-.menu_principal .menu_item a:hover{color:white !important;}
+.menu_principal .menu_item a:hover{color:#CCCCCC !important;}
+
 .items_wraper{}
 .slidesContainer{height: auto;overflow: hidden;position: relative;display:inline-block;}
 .slidesContainer{transition: all 1s;-moz-transition: all 1s;-webkit-transition: all 1s;-o-transition: all 1s;}
