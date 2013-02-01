@@ -2,140 +2,18 @@
 <html>
 <head>
 	<style>
-		
+		.activo{
+			color:white;
+		}
 	</style>
 	
 	<script src="/web/libs/jquery-1.8.3.js" type="text/javascript"></script>
+	
+	<script src="/web/libs/jquery-1.8.3.js" type="text/javascript"></script>
+	<?php $this->cargarJs('/js/main.js'); ?>
+	
 	<script>
-		seleccionar=function(target){
-			target=$(target);
-			
-			var incW=14;
-			 var w=target.width();
-			 var h=target.height();
-			 var selector=$('.paginaActiva');
-			 selector.css('background','white');
-			 selector.css('width',w);
-			 selector.css('height',h+incW);
-			
-			
-			var offset=target.offset();					
-			offset.top=offset.top-(incW/2);
-			selector.offset(offset);
-		}
-		$(function(){
-			 var we = $('.explica').width();
-			
-			// var screen=window.screen;
-			// var sw= screen.availWidth;
-			var sw = $(window).width();
-			if (sw>we){
-				$('.explica').css('position','relative');
-				$('.explica').css('left','50%');
-				$('.explica').width(we);
-				$('.explica').css('margin-left' ,(we/2) * -1);
-			}
-			var imgW=0;
-			if (sw > 1000){
-				imgW=1000;
-			}else{
-				imgW=sw - 40;
-			}
-			
-			$('.slider_1').width(imgW);
-			$('.pagina').css('margin-left',(imgW/2) *-1);
-			$('.slider_1 img').width(imgW);
-			
-			
-			
-		 // create an image object
-		 objImage = new Image();
-			 
-		 // set what happens once the image has loaded 
-		 objImage.onLoad=function(){
-			alert('load');
-			console.log("this"); console.log(this);
-			$('.slidesContainer').height( this.height() );
-		 };
-			 
-		 // preload the image file
-		 objImage.src='/web/apps/kaspita/imagenes/slide_grande_1.png';
-			var slides = $('.slider .slidesContainer > .slide');
-			
-			$('.slider .slidesContainer').css('width',imgW * slides.length);
-			var items=$('.paginador a');
-			
-			$.each(items, function(index, value) {
-			  $(value).click(function(){
-				var offset=index*imgW * -1;
-				idx=index;
-				$('.slider .slidesContainer').css('margin-left',offset);				
-			  });
-			  
-			});
-			
-			var numItems=5;
-			var ancho=imgW;
-			var idx=1;
-			
-			sliderShow=function(){
-				setTimeout(function(){
-					var offset=idx*ancho * -1;
-					
-					$('.slider .slidesContainer').css('margin-left',offset);						
-					var target=$('.paginador .a-wrap');
-					seleccionar(target[idx]);
-					idx++;
-					
-					if (idx>=numItems) idx=0;
-					sliderShow();
-				}, 3000);
-			}
-			sliderShow();
-			
-			var target=$('.paginador .a-wrap');
-			seleccionar(target[0]);
-					
-			var paginador=$('.paginador');
-			var w,h;
-			w=paginador.width();
-			h=paginador.height();
-			var fondoPaginador = $('.fondo-paginador');
-			fondoPaginador.css('width',w);
-			fondoPaginador.css('height',h);
-			
-			$('.paginador a').mouseout(function(e){			
-				 var selector=$('.selectorPagina');
-				 selector.css('background','transparent');
-			});
-			$('.paginador .a-wrap').mouseenter(function(e){										
-				 var target=$(e.target);
-				 var idt=target.attr('cont');
-				 target = $('.paginador div[idw="'+idt+'"]');
-				 
-				 var incW=14;
-				 var w=target.width();
-				 var h=target.height();
-				 var selector=$('.selectorPagina');
-				 selector.css('background','white');
-				 selector.css('width',w);
-				 selector.css('height',h+incW);
-				
-				
-				var offset=target.offset();					
-				offset.top=offset.top-(incW/2);
-				selector.offset(offset);										
-			});
-			
-			$('.paginador .a-wrap').click(function(e){
-				 var target=$(e.target);
-				
-				  var idt=target.attr('cont');
-				  target = $('.paginador div[idw="'+idt+'"]');
-				 seleccionar(target);
-				 
-			});
-		});
+		
 			
 		
 	</script>
@@ -144,7 +22,7 @@
 	
 </head>
 <body >
-	<div class="pagina">
+	<div class="pagina" style="border:#D6D6D6 1px solid;">
 		<script type="text/javascript">
 		/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
 		var disqus_shortname = 'kaspitastudios'; // required: replace example with your forum shortname
@@ -169,19 +47,8 @@
 		<div class="header">
 		
 				<div class='menubase'></div>
-				<div class="menu_principal">
-					
-					
-					<div class="items_wraper">
-						<div class="menu_item activo"><a href="#">inicio</a></div>
-						<div class="menu_item"><a href="#">nosotros</a></div>
-						<div class="menu_item"><a href="#">portafolio</a></div>
-						<div class="menu_item"><a href="#">servicios</a></div>
-						<div class="menu_item"><a href="#">contacto</a></div>
-					</div>
-					
-						
-				</div>
+				<?php $this->mostrar('/menu_principal'); ?>
+				
 				
 		</div>
 		
@@ -214,7 +81,7 @@
 				
 			</div>
 		</div> 
-		<div class="explica" style="display:inline-block;">
+		<div class="explica" style="display:inline-block;margin-top:15px;margin-bottom:10px;">
 			<div style="display:inline-block;margin-right:40px;vertical-align:top">
 				<h3 style="display:inline;">&iquest;Quienes somos?</h3><br/>
 				<span>Un equipo de amantes al diseño con <br/>una manera especial de hacer las cosas...</span>
@@ -227,11 +94,15 @@
 				<h3 style="display:inline;">Nuestra Ubicaci&oacute;n</h3><br/>
 				<span>En alguna parte de mazatlán, <br /> Sinaloa, Mexico...</span>
 			</div>			
+		</div>		
+		<div style="display:block;margin-bottom:10px;"></div>
+		<div style="background:#ffffff;padding-top:14px;padding-right:10px;">
+			<div class="telefonos" style="background-image:url('<?php echo $this->getRutaBase(); ?>imagenes/telefonos.png'); width:60%;height:600px;float:left;" ></div>
+			<div id="disqus_thread" style="width:30%;float:right;"></div>		
+			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+			<div style="clear:both;"></div>
 		</div>
-		<div id="disqus_thread"></div>		
-		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-		<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-	
 	<div>
 </body>
 </html>

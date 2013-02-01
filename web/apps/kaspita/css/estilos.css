@@ -37,3 +37,5 @@ transition:background-color 1s, left .5s;-moz-transition: background-color 1s, l
 background:transparent;left:900px; bottom:0;opacity:.5;filter: alpha(opacity=50);}
 
 .a-wrap{display:inline-block;}
+
+.slider img{display:none;}
