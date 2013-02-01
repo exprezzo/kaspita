@@ -24,10 +24,17 @@
 			selector.offset(offset);
 		}
 		$(function(){
+			 var we = $('.explica').width();
+			
 			// var screen=window.screen;
 			// var sw= screen.availWidth;
 			var sw = $(window).width();
-			
+			if (sw>we){
+				$('.explica').css('position','relative');
+				$('.explica').css('left','50%');
+				$('.explica').width(we);
+				$('.explica').css('margin-left' ,(we/2) * -1);
+			}
 			var imgW=0;
 			if (sw > 1000){
 				imgW=1000;
@@ -53,10 +60,6 @@
 			 
 		 // preload the image file
 		 objImage.src='/web/apps/kaspita/imagenes/slide_grande_1.png';
-
-			
-		
-			
 			var slides = $('.slider .slidesContainer > .slide');
 			
 			$('.slider .slidesContainer').css('width',imgW * slides.length);
@@ -101,8 +104,7 @@
 			fondoPaginador.css('width',w);
 			fondoPaginador.css('height',h);
 			
-			$('.paginador a').mouseout(function(e){
-			
+			$('.paginador a').mouseout(function(e){			
 				 var selector=$('.selectorPagina');
 				 selector.css('background','transparent');
 			});
@@ -212,7 +214,20 @@
 				
 			</div>
 		</div> 
-		
+		<div class="explica" style="display:inline-block;">
+			<div style="display:inline-block;margin-right:40px;vertical-align:top">
+				<h3 style="display:inline;">&iquest;Quienes somos?</h3><br/>
+				<span>Un equipo de amantes al diseño con <br/>una manera especial de hacer las cosas...</span>
+			</div>
+			<div style="display:inline-block;margin-right:40px;vertical-align:top">
+				<h3 style="display:inline;">Nuestro trabajo</h3><br/>
+				<span>Amamos lo que hacemos, y por ello<br /> tenemos excelentes resultados....</span>
+			</div>
+			<div style="display:inline-block;margin-right:40px;vertical-align:top">
+				<h3 style="display:inline;">Nuestra Ubicaci&oacute;n</h3><br/>
+				<span>En alguna parte de mazatlán, <br /> Sinaloa, Mexico...</span>
+			</div>			
+		</div>
 		<div id="disqus_thread"></div>		
 		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 		<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
