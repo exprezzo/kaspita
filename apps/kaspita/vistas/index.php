@@ -24,8 +24,9 @@
 			selector.offset(offset);
 		}
 		$(function(){
-			var screen=window.screen;
-			var sw= screen.availWidth;
+			// var screen=window.screen;
+			// var sw= screen.availWidth;
+			var sw = $(window).width();
 			
 			var imgW=0;
 			if (sw > 1000){
