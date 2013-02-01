@@ -86,15 +86,15 @@
 			<div class="explica" style="display:inline-block;margin-top:15px;margin-bottom:10px;">
 				<div style="display:inline-block;margin-right:40px;vertical-align:top">
 					<h3 style="display:inline;">&iquest;Quienes somos?</h3><br/>
-					<span style="margin-top: 8px;display:inline-block;">Un equipo de amantes al diseño con <br/>una manera especial de hacer las cosas...</span>
+					<span style="margin-top: 8px;display:inline-block;color:#737373;">Un equipo de amantes al diseño con <br/>una manera especial de hacer las cosas...</span>
 				</div>
 				<div style="display:inline-block;margin-right:40px;vertical-align:top">
 					<h3 style="display:inline;">Nuestro trabajo</h3><br/>
-					<span style="margin-top: 8px;display:inline-block;">Amamos lo que hacemos, y por ello<br /> tenemos excelentes resultados....</span>
+					<span style="margin-top: 8px;display:inline-block;color:#737373;">Amamos lo que hacemos, y por ello<br /> tenemos excelentes resultados....</span>
 				</div>
 				<div style="display:inline-block;margin-right:40px;vertical-align:top">
 					<h3 style="display:inline;">Nuestra Ubicaci&oacute;n</h3><br/>
-					<span style="margin-top: 8px;display:inline-block;">En alguna parte de mazatlán, <br /> Sinaloa, Mexico...</span>
+					<span style="margin-top: 8px;display:inline-block;color:#737373;">En alguna parte de mazatlán, <br /> Sinaloa, Mexico...</span>
 				</div>			
 			</div>		
 			<div style="display:block;margin-bottom:10px;"></div>

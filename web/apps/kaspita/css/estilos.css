@@ -1,3 +1,10 @@
+ table, td, div, span, a, h1, h2, h3, ul, li {
+margin: 0px;
+padding: 0px;
+font-family: arial, sans-serif, helvetica;
+font-size: 14px;
+}
+
 .pagina{left:50%;margin-left:-500px;position:absolute;}
 .header{height:72px;background:black url('/web/apps/kaspita/imagenes/logo_header.png');background-repeat:no-repeat;position:relative;
 background-position:28px 23px;margin-top:23px;max-width:1000px;
